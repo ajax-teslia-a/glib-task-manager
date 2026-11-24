@@ -1,0 +1,38 @@
+[
+    {
+        "label": "configure",
+        "command": "cmake --preset debug",
+        "use_new_terminal": false,
+        "reveal": "always"
+    },
+    {
+        "label": "build",
+        "command": "cmake --build --preset debug -- -j$(nproc)",
+        "use_new_terminal": false,
+        "reveal": "always"
+    },
+    {
+        "label": "run",
+        "command": "./build/debug/out/bin/glib_task_manager",
+        "use_new_terminal": false,
+        "reveal": "always"
+    },
+    {
+        "label": "test",
+        "command": "cmake --build --preset debug -- -j$(nproc) && ctest --test-dir build/debug --output-on-failure",
+        "use_new_terminal": false,
+        "reveal": "always"
+    },
+    {
+        "label": "valgrind",
+        "command": "cmake --build --preset debug -- -j$(nproc) && G_SLICE=always-malloc G_DEBUG=gc-friendly valgrind --leak-check=full --show-leak-kinds=definite,possible --error-exitcode=1 ./build/debug/out/bin/glib_task_manager",
+        "use_new_terminal": false,
+        "reveal": "always"
+    },
+    {
+        "label": "format all (clang-format)",
+        "command": "find src include tests -name '*.[ch]' | xargs clang-format -i",
+        "use_new_terminal": false,
+        "reveal": "no_focus"
+    }
+]

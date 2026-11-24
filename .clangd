@@ -1,0 +1,10 @@
+CompileFlags:
+    # CMake presets put the compilation database into build/<preset>; see "Build" in README.md
+    CompilationDatabase: build/debug
+Diagnostics:
+    ClangTidy:
+        Add: [bugprone-*, clang-analyzer-*, readability-braces-around-statements, misc-redundant-expression]
+        Remove: [bugprone-easily-swappable-parameters, bugprone-reserved-identifier]
+    UnusedIncludes: None
+Index:
+    Background: Build
