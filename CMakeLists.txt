@@ -28,7 +28,11 @@ find_package(PkgConfig REQUIRED)
 pkg_check_modules(GLIB REQUIRED IMPORTED_TARGET glib-2.0 gio-2.0)
 
 # Targets
-add_library(task_manager STATIC src/task_manager.c)
+add_library(task_manager STATIC src/cli.c
+                                src/manager.c
+                                src/tag.c
+                                src/task.c
+                                src/task_db.c)
 target_include_directories(task_manager PUBLIC include)
 target_link_libraries(task_manager PUBLIC PkgConfig::GLIB)
 

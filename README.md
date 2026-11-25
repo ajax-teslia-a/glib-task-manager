@@ -39,4 +39,4 @@ Without `libcmocka-dev` the tests are skipped with a warning (or pass `-DBUILD_T
 
 Same as `mcu_communicator` (`.clang-format`): 3 spaces, 140 columns, Mozilla braces, left pointer alignment.
 Module-prefixed functions (`TM_Push`), `_t` types, `-Wall -Wextra` flags.
-Editor setup is in `.zed/` (clangd + format off save) and `.clangd` (clang-tidy checks).
+Editor setup is in `.zed/` (clangd + format on save) and `.clangd` (clang-tidy checks).

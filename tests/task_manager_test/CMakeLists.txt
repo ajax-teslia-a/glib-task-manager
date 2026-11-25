@@ -1,6 +1,6 @@
 set(SOURCES
     task_manager_test.c
-    ${PROJECT_SOURCE_DIR}/src/task_manager.c
+    # ${PROJECT_SOURCE_DIR}/src/task_manager.c
 )
 
 add_executable(task_manager_test ${SOURCES})
